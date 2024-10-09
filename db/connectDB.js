@@ -2,9 +2,7 @@ import mongoose from "mongoose";
 
 export async function connectDB() {
   await mongoose
-    .connect(
-      "mongodb+srv://shrutjain488:IooPk9tg1cC6aWob@cluster0.2n1hzqp.mongodb.net/worldwise?retryWrites=true&w=majority&appName=Cluster0"
-    )
+    .connect(process.env.DATABASE_URL)
     .then(() => {
       console.log("Successfully connected to database");
     })
